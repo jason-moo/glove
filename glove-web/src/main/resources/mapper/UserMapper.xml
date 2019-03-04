@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tf.mapper.UserMapper">
+
+    <resultMap id="UserMap" type="com.tf.entity.User">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="age" column="age"/>
+        <result property="email" column="email"/>
+    </resultMap>
+
+    <select id="getById" resultMap="UserMap">
+        select *
+        from user
+        where id = #{id};
+    </select>
+
+</mapper>
